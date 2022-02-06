@@ -16,9 +16,8 @@ public class DataGenerator {
             Faker faker = new Faker(new Locale(locale));
             return new OrderCardInfo(
                     faker.address().city(),
-                    faker.date().future(4 , TimeUnit.DAYS).toString(),
                     faker.name().fullName(),
-                    faker.phoneNumber().cellPhone()
+                    faker.bothify("+79#########")
             );
         }
     }
