@@ -1,5 +1,7 @@
 package ru.netology.util;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +21,9 @@ public class DataGenerator {
                     faker.name().fullName(),
                     faker.bothify("+79#########")
             );
+        }
+        public String generateDate(int days) {
+            return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         }
     }
 }
